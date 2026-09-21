@@ -1,0 +1,42 @@
+# Matches ppo_trainer.yaml's semantic fields plus run_math_hybrid.sh defaults.
+# In particular, both offline and online encoders use bfloat16. A checkpoint
+# trained with a different dtype is intentionally rejected by strict loading.
+semantic_value:
+  enable: True
+  model_path: Qwen/Qwen3-4B
+  revision: null
+  initial_checkpoint: null
+  initialization_mode: qualified
+  require_pretrained: True
+  allow_missing_resume: False
+  device: cuda:0
+  num_cpus: 1
+  startup_timeout: 1800
+  torch_dtype: bfloat16
+  attn_implementation: sdpa
+  trust_remote_code: False
+  max_length: 16384
+  head_hidden_dim: 256
+  dropout: 0.1
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  train_epochs: 5
+  train_batch_size: 256
+  replay_max_trajectories: 2048
+  validation_fraction: 0.2
+  holdout_salt: semantic-prefix-v1
+  seed: 0
+  min_train_trajectories: 64
+  min_val_trajectories: 32
+  min_val_per_class: 8
+  min_train_questions: 8
+  min_val_questions: 8
+  min_val_auc: 0.55
+  min_brier_improvement: 0.0
+  candidate_brier_tolerance: 0.0
+  max_ece: 0.15
+  min_role_val_prefixes: 32
+  disable_miscalibrated: True
+  miscalibration_patience: 3
+  disable_ready_when_insufficient: False
+  cpu_num_threads: 1

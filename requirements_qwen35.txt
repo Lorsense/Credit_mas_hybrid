@@ -1,0 +1,3 @@
+# Linux / NVIDIA CUDA. Use a fresh environment, not requirements_sglang.txt.
+# Install the local package and the mutually consistent Qwen3.5 runtime extra.
+-e .[qwen35]
