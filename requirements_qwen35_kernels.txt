@@ -1,4 +1,4 @@
 # Install AFTER requirements_qwen35.txt with --no-build-isolation so extension
 # builds see the pinned torch. These are Linux/CUDA training accelerators.
-flash-linear-attention==0.4.2
+flash-linear-attention==0.5.2
 causal-conv1d==1.6.0
